@@ -213,6 +213,7 @@ CREATE TABLE IF NOT EXISTS `foodService`.`order_product` (
   `orderCod` BIGINT(10) UNSIGNED NOT NULL,
   `prdCod` BIGINT(10) UNSIGNED NOT NULL,
   `prdPrice` DECIMAL(16,2) NULL DEFAULT NULL,
+  `cartQuantity` INT(11) NULL DEFAULT NULL,
   `prdQuantity` INT(11) NULL DEFAULT NULL,
   `prdDiscount` DECIMAL(3,2) NULL DEFAULT NULL,
   `prdIsv` DECIMAL(9,4) NULL DEFAULT NULL,
