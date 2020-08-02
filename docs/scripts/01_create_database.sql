@@ -27,9 +27,9 @@ CREATE TABLE IF NOT EXISTS `foodService`.`user` (
   `userLM` DATETIME NULL DEFAULT NULL,
   `userMaxOrder` TINYINT(3) UNSIGNED NULL DEFAULT NULL,
   PRIMARY KEY (`userCod`),
-  UNIQUE INDEX `userMail_UNIQUE` (`userEmail` ASC) VISIBLE,
-  INDEX `userState_idx` (`userState` ASC) VISIBLE,
-  INDEX `userPswdStateF_idx` (`userPswdState` ASC) VISIBLE,
+  UNIQUE INDEX `userMail_UNIQUE` (`userEmail` ASC) ,
+  INDEX `userState_idx` (`userState` ASC) ,
+  INDEX `userPswdStateF_idx` (`userPswdState` ASC) ,
   CONSTRAINT `userStateF`
     FOREIGN KEY (`userState`)
     REFERENCES `foodService`.`state` (`stateCod`)
@@ -56,8 +56,8 @@ CREATE TABLE IF NOT EXISTS `foodService`.`direction` (
   `hoodCodFK` INT(10) UNSIGNED NOT NULL,
   `directStreet` VARCHAR(254) NULL DEFAULT NULL,
   PRIMARY KEY (`directCod`, `userCodD`, `hoodCodFK`),
-  INDEX `hoodCod_idx` (`hoodCodFK` ASC) VISIBLE,
-  INDEX `userCodDf_idx` (`userCodD` ASC) VISIBLE,
+  INDEX `hoodCod_idx` (`hoodCodFK` ASC) ,
+  INDEX `userCodDf_idx` (`userCodD` ASC) ,
   CONSTRAINT `hoodCod`
     FOREIGN KEY (`hoodCodFK`)
     REFERENCES `foodService`.`neighborhood` (`hoodCod`)
@@ -84,8 +84,8 @@ CREATE TABLE IF NOT EXISTS `foodService`.`product` (
   `prdState` CHAR(3) NULL DEFAULT NULL,
   `productcol` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`prdCod`),
-  INDEX `prdState_idx` (`prdState` ASC) VISIBLE,
-  INDEX `prdCategoryF_idx` (`prdCategory` ASC) VISIBLE,
+  INDEX `prdState_idx` (`prdState` ASC) ,
+  INDEX `prdCategoryF_idx` (`prdCategory` ASC) ,
   CONSTRAINT `prdStateF`
     FOREIGN KEY (`prdState`)
     REFERENCES `foodService`.`state` (`stateCod`)
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `foodService`.`category` (
   `catDscEN` VARCHAR(80) NULL DEFAULT NULL,
   `catState` CHAR(3) NULL DEFAULT NULL,
   PRIMARY KEY (`catCod`),
-  INDEX `CatEstF_idx` (`catState` ASC) VISIBLE,
+  INDEX `CatEstF_idx` (`catState` ASC) ,
   CONSTRAINT `CatStateF`
     FOREIGN KEY (`catState`)
     REFERENCES `foodService`.`state` (`stateCod`)
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `foodService`.`type` (
   `typeState` CHAR(3) NULL DEFAULT NULL,
   `typeExp` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`typeCod`),
-  INDEX `typeStateF_idx` (`typeState` ASC) VISIBLE,
+  INDEX `typeStateF_idx` (`typeState` ASC) ,
   CONSTRAINT `typeStateF`
     FOREIGN KEY (`typeState`)
     REFERENCES `foodService`.`state` (`stateCod`)
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `foodService`.`type_module` (
   `typeCod` CHAR(3) NOT NULL,
   `mdlCod` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`typeCod`, `mdlCod`),
-  INDEX `mdlCodF_idx` (`mdlCod` ASC) VISIBLE,
+  INDEX `mdlCodF_idx` (`mdlCod` ASC) ,
   CONSTRAINT `typeCodF`
     FOREIGN KEY (`typeCod`)
     REFERENCES `foodService`.`type` (`typeCod`)
@@ -165,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `foodService`.`module` (
   `mdlState` CHAR(3) NULL DEFAULT NULL,
   `mdlClass` CHAR(3) NULL DEFAULT NULL,
   PRIMARY KEY (`mdlCod`),
-  INDEX `mdlStateF_idx` (`mdlState` ASC) VISIBLE,
+  INDEX `mdlStateF_idx` (`mdlState` ASC) ,
   CONSTRAINT `mdlStateF`
     FOREIGN KEY (`mdlState`)
     REFERENCES `foodService`.`state` (`stateCod`)
@@ -187,9 +187,9 @@ CREATE TABLE IF NOT EXISTS `foodService`.`orders` (
   `orderIsv` DECIMAL(15,2) NULL DEFAULT NULL,
   `orderTotal` DECIMAL(15,2) NULL DEFAULT NULL,
   PRIMARY KEY (`orderCod`, `userCod`),
-  INDEX `userCodF_idx` (`userCod` ASC) VISIBLE,
-  INDEX `orderPaymentF_idx` (`orderPayment` ASC) VISIBLE,
-  INDEX `orderStatusF_idx` (`orderStatus` ASC) VISIBLE,
+  INDEX `userCodF_idx` (`userCod` ASC) ,
+  INDEX `orderPaymentF_idx` (`orderPayment` ASC) ,
+  INDEX `orderStatusF_idx` (`orderStatus` ASC) ,
   CONSTRAINT `userCod`
     FOREIGN KEY (`userCod`)
     REFERENCES `foodService`.`user` (`userCod`)
@@ -218,8 +218,8 @@ CREATE TABLE IF NOT EXISTS `foodService`.`order_product` (
   `prdDiscount` DECIMAL(3,2) NULL DEFAULT NULL,
   `prdIsv` DECIMAL(9,4) NULL DEFAULT NULL,
   PRIMARY KEY (`orderPrdCod`, `orderCod`, `prdCod`),
-  INDEX `orderCodF_idx` (`orderCod` ASC) VISIBLE,
-  INDEX `prdCodF_idx` (`prdCod` ASC) VISIBLE,
+  INDEX `orderCodF_idx` (`orderCod` ASC) ,
+  INDEX `prdCodF_idx` (`prdCod` ASC) ,
   CONSTRAINT `orderCodF`
     FOREIGN KEY (`orderCod`)
     REFERENCES `foodService`.`orders` (`orderCod`)
@@ -240,7 +240,7 @@ CREATE TABLE IF NOT EXISTS `foodService`.`payment` (
   `paymentLib` VARCHAR(30) NULL DEFAULT NULL,
   `paymentState` CHAR(3) NULL DEFAULT NULL,
   PRIMARY KEY (`paymentCod`),
-  INDEX `paymentStateF_idx` (`paymentState` ASC) VISIBLE,
+  INDEX `paymentStateF_idx` (`paymentState` ASC) ,
   CONSTRAINT `paymentStateF`
     FOREIGN KEY (`paymentState`)
     REFERENCES `foodService`.`state` (`stateCod`)
@@ -264,8 +264,8 @@ CREATE TABLE IF NOT EXISTS `foodService`.`variation` (
   `variationQuantity` INT(10) UNSIGNED NULL DEFAULT NULL,
   `variationState` CHAR(3) NULL DEFAULT NULL,
   PRIMARY KEY (`variationCod`),
-  INDEX `prdCodF_idx` (`prdCod` ASC) VISIBLE,
-  INDEX `variationState_idx` (`variationState` ASC) VISIBLE,
+  INDEX `prdCodF_idx` (`prdCod` ASC) ,
+  INDEX `variationState_idx` (`variationState` ASC) ,
   CONSTRAINT `prdCodFF`
     FOREIGN KEY (`prdCod`)
     REFERENCES `foodService`.`product` (`prdCod`)
@@ -296,8 +296,8 @@ CREATE TABLE IF NOT EXISTS `foodService`.`user_type` (
   `userTypeExp` DATETIME NULL DEFAULT NULL,
   `userTypeRgstrd` DATETIME NULL DEFAULT NULL,
   PRIMARY KEY (`typeCodUT`, `userCodUT`),
-  INDEX `userCod_idx` (`userCodUT` ASC) VISIBLE,
-  INDEX `userTypeState_idx` (`userTypeState` ASC) VISIBLE,
+  INDEX `userCod_idx` (`userCodUT` ASC) ,
+  INDEX `userTypeState_idx` (`userTypeState` ASC) ,
   CONSTRAINT `typeCodUTF`
     FOREIGN KEY (`typeCodUT`)
     REFERENCES `foodService`.`type` (`typeCod`)
@@ -322,7 +322,7 @@ CREATE TABLE IF NOT EXISTS `foodService`.`neighborhood` (
   `hoodDsc` VARCHAR(130) NULL DEFAULT NULL,
   `hoodShippingFee` DECIMAL(8,3) NULL DEFAULT NULL,
   PRIMARY KEY (`hoodCod`),
-  INDEX `hoodState_idx` (`hoodState` ASC) VISIBLE,
+  INDEX `hoodState_idx` (`hoodState` ASC) ,
   CONSTRAINT `hoodState`
     FOREIGN KEY (`hoodState`)
     REFERENCES `foodService`.`state` (`stateCod`)
