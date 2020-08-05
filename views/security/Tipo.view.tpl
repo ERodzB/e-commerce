@@ -28,11 +28,6 @@
                     {{endfor states}}
                 </select>
             </div>
-            <div class="single-input row">
-                <br>
-                <label class="left" for="text">Fecha de Expiracion</label><br>
-                <input class="col-s-12 col-m-11 col-12 no-padding"  type="datetime" name="typeExp" id="typeExp" placeholder="Fecha de Expiracion" value="{{typeExp}}" {{readonly}}>
-            </div>
             <div class="single-buttons col-offset-s-2 col-offset-m-4 col-8 col-offset-5 no-padding">
                 <button class="button-3"  type="submit" id="btnConfirmar" {{readonly}}>Confirmar</button>&nbsp;
                 <button class="button-3" type="submit" id="btnCancelar">Cancelar</button>

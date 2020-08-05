@@ -2,7 +2,7 @@
         <div class="total col-s-12 col-m-4 col-3 no-padding">
             <div class="row">
                 {{foreach products}}
-                    <p>{{cartQuantity}} x {{prdDscES}} ${{prdPrice}}</p>  
+                    <p>{{cartQuantity}} x {{nombreProducto}} ${{precioProducto}}</p>  
                 {{endfor products}}
             </div>
             <div class="line-redDark"></div>
@@ -16,36 +16,10 @@
             </div>
         </div>
         <div class="check-info col-s-12 col-m-8 col-9 no-padding">
-            <form action="index.php?page=Checkout" method="POST" class="{{show}}">
-                <h2>Direcciones Anteriores</h2>
-                <div class="direcciones">
-                     {{foreach userHood}}
-                        <button id="btnMia" name="btnMia" value="{{directCod}}"> {{hoodDsc}} </button>
-                    {{endfor userHood}}
-                </div>
-                </form>
                 <h2>1. &nbsp;&nbsp;Información de Entrega</h2>
                 <div class="line-redDark"></div>
                     <form action="index.php?page=Checkout" method="POST">
                     <input type="hidden" name="token" id="token" value="{{token}}">
-                    <div class="row">
-                        <label for="orderDeliveryTime">Hora de Entrega:</label>&nbsp;<br>
-                        <select name="orderDeliveryTime" id="orderDeliveryTime" required>
-                            {{foreach hours}}
-                                <option value="{{value}}">{{hour}}</option>
-                            {{endfor hours}}
-                        </select >
-                    </div>
-                    
-                   <div class="row">
-                    <label for="hoodCod">Lugar de Residencia:</label>&nbsp;<br>
-                    <select class="{{hErr}}"name="hoodCod" id="hoodCod" required>
-                        {{foreach hood}}
-                            <option value="{{hoodCod}}" {{selected}} >{{hoodDsc}}</option>
-                        {{endfor hood}}
-                    </select>
-                   </div>
-
                     <div class="row">
                         <label for="orderCell">Número Telefónico:</label>&nbsp;<br>
                         <input class="{{cErr}}" type="text" name="orderCell" id="orderCell" {{if userCell}}value="{{userCell}}"{{endif userCell}} {{if cellErr}}placeholder="{{cellErr}}"{{endif cellErr}}
@@ -75,11 +49,7 @@
                 <div class="line-redDark"></div>
                 &nbsp;&nbsp;
                     <div class="payments">
-                        {{foreach payments}}
-                            <button type="submit" name="btnPayment" value="{{paymentCod}}"><i class="fab fa-cc-{{paymentLib}}"></i></button>
-                        {{endfor payments}}
-                        
-                        <button type="submit" name="money"><i class="fas fa-money-bill-wave"></i></button>
+                        <button type="submit" name="btnPayment" value="PPL"><i class="fab fa-cc-paypal"></i></button>
                     </div>
             </form>
         </div>

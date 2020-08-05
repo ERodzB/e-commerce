@@ -1,10 +1,12 @@
 <?php 
 require_once 'models/security/modules.model.php';
-require_once 'models/security/state.model.php';
 
     $viewData = array();
     $viewData["module"] = array();
-    $viewData["states"] = getState() ;
+    $viewData["states"]=array(
+        array("stateCod"=>"ACT", "stateDsc"=>"Activo"),
+        array("stateCod"=>"INA", "stateDsc"=>"Inactivo")
+    );
     $viewData["act"] = "";
     $viewData["readonly"]="";
     $viewData["mode"]= "";
@@ -15,6 +17,8 @@ require_once 'models/security/state.model.php';
         array("classCod"=>"MNU", "classDsc"=>"Menu"),
         array("classCod"=>"PGE", "classDsc"=>"Pagina")
     );
+ 
+    
     $viewData["modeDsc"] = array("INS"=>"Agregando Nuevo Modulo", "UPD"=>"Actualizando Modulo", "DSP"=>"Mostrando Modulo");
     if(isset($_GET["act"])){
         $viewData["act"] = $_GET["act"];
@@ -49,7 +53,7 @@ require_once 'models/security/state.model.php';
                     case "INS":
                         $result = "";
 
-                        $result=newModule($varBody["mdlCod"],$varBody["mdlDscES"],$varBody["mdlDscEN"],$varBody["mdlState"], $varBody["mdlClass"]);
+                        $result=newModule($varBody["mdlCod"],$varBody["mdlDsc"],$varBody["mdlState"], $varBody["mdlClass"]);
                         
                         
                         if($result){
@@ -62,7 +66,7 @@ require_once 'models/security/state.model.php';
                         break;
                     case "UPD":
                         $result = "";
-                        $result=updateModule($varBody["mdlCod"],$varBody["mdlDscES"],$varBody["mdlDscEN"],$varBody["mdlState"],$varBody["mdlClass"]);
+                        $result=updateModule($varBody["mdlCod"],$varBody["mdlDsc"],$varBody["mdlState"],$varBody["mdlClass"]);
 
                         
                         if($result){
@@ -84,7 +88,6 @@ require_once 'models/security/state.model.php';
         $modules = array();
         $modules = getModulesByCode($_GET["cod"]);
         mergeFullArrayTo($modules, $viewData);
-        echo '<pre>'.print_r($modules).'</pre>';
     }
     if(isset($viewData["mdlState"])){
         $viewData["states"] = addSelectedCmbArray($viewData["states"],'stateCod',$viewData["mdlState"]);

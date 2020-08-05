@@ -3,15 +3,15 @@
                 {{if hasItems}}
                     {{foreach products}}
                     <div class="items"> 
-                            <img class="col-s-9 col-m-3 col-2 col-l-2 no-padding" src="{{prdImageURL}}" alt="">
+                            <img class="col-s-9 col-m-3 col-2 col-l-2 no-padding" src="{{imagenProducto}}" alt="">
                             <div class="info">
-                                <h2> {{prdDscES}} </h2>
+                                <h2> {{nombreProducto}} </h2>
                                 <form action="index.php?page={{page}}" method="post">
-                                    <input type="hidden" name="prdCod" value="{{prdCod}}">
+                                    <input type="hidden" name="codProducto" value="{{codProducto}}">
                                     <input type="hidden" name="cartCod" value="{{cartCod}}">
                                     <input type="hidden" name="prdQuantity" value="{{prdQuantity}}">
                                     <p>Cantidad: {{prdQuantity}}</p>
-                                    <p>Precio: ${{prdPrice}}</p>
+                                    <p>Precio: ${{precioProducto}}</p>
                                     <p>*Incluye Papas Fritas</p>
                                     <p class="add"><button id="btnLess" name="btnLess" type="submit"><i class="fas fa-minus"></i></button>&nbsp;{{cartQuantity}}&nbsp;
                                     <button id="btnAdd" name="btnAdd" type="submit"><i class="fas fa-plus"></i></button></p>

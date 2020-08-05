@@ -17,15 +17,9 @@
             </div>
             <div class="single-input row">
                 <br>
-                <label class="left" for="mdlDscES">Descripcion del Modulo Español</label><br>
-                <input class="col-s-12 col-m-11 col-12 no-padding" type="text" name="mdlDscES" id="mdlDscES" placeholder="Descripcion de Modulo" 
-                    value="{{mdlDscES}}" {{readonly}}>
-            </div>
-            <div class="single-input row">
-                <br>
-                <label class="left" for="mdlDscEN">Descripcion del Modulo Ingles</label><br>
-                <input class="col-s-12 col-m-11 col-12 no-padding" type="text" name="mdlDscEN" id="mdlDscEN" placeholder="Descripcion de Modulo" 
-                    value="{{mdlDscEN}}" {{readonly}}>
+                <label class="left" for="mdlDsc">Descripcion del Modulo</label><br>
+                <input class="col-s-12 col-m-11 col-12 no-padding" type="text" name="mdlDsc" id="mdlDsc" placeholder="Descripcion de Modulo" 
+                    value="{{mdlDsc}}" {{readonly}}>
             </div>
             <div class="single-input row">
                 <label for="mdlState">Estado</label><br>

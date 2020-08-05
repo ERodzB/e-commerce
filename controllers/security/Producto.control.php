@@ -1,11 +1,10 @@
 <?php 
 require_once 'models/security/product.model.php';
-require_once 'models/security/category.model.php';
-require_once 'models/security/state.model.php';
-
-    $viewData = array();
-    $viewData["states"] = getState() ;
-    $viewData["categories"]=getCategories();
+     $viewData = array();
+    $viewData["states"]=array(
+        array("stateCod"=>"ACT", "stateDsc"=>"Activo"),
+        array("stateCod"=>"INA", "stateDsc"=>"Inactivo")
+    );
     $viewData["act"] = "";
     $viewData["readonly"]="";
     $viewData["updating"]="";
@@ -50,11 +49,11 @@ require_once 'models/security/state.model.php';
                         $result = "";
 
                         $errors= array();
-                        $file_name = $_FILES['prdImageURL']['name'];
-                        $file_size =$_FILES['prdImageURL']['size'];
-                        $file_tmp =$_FILES['prdImageURL']['tmp_name'];
-                        $file_type=$_FILES['prdImageURL']['type'];
-                        $fileExt = pathinfo($_FILES['prdImageURL']['name'], PATHINFO_EXTENSION);
+                        $file_name = $_FILES['imagenProducto']['name'];
+                        $file_size =$_FILES['imagenProducto']['size'];
+                        $file_tmp =$_FILES['imagenProducto']['tmp_name'];
+                        $file_type=$_FILES['imagenProducto']['type'];
+                        $fileExt = pathinfo($_FILES['imagenProducto']['name'], PATHINFO_EXTENSION);
                         $file_upload_to = "public/imgs/";
                         //echo $fileExt;
                         $extensions= array("jpeg","jpg","png");
@@ -75,11 +74,10 @@ require_once 'models/security/state.model.php';
                         }
                     
                         /*
-                        $result=newProduct($varBody["prdImageURL"],$varBody["prdDscES"],$varBody["prdDscEN"],$varBody["prdPrice"],$varBody["prdCategory"],
-                        $varBody["prdStock"],$varBody["prdState"]);*/
+                        $result=newProduct($varBody["imagenProducto"],$varBody["nombreProducto"],$varBody["prdDscEN"],$varBody["precioProducto"],$varBody["prdCategory"],
+                        $varBody["stockProducto"],$varBody["prdState"]);*/
 
-                        $result=newProduct($file_upload_to.$file_name,$varBody["prdDscES"],$varBody["prdDscEN"],$varBody["prdPrice"],$varBody["prdQuantity"],
-                        $varBody["prdCategory"],$varBody["prdStock"],$varBody["prdState"]);
+                        $result=newProduct($file_upload_to.$file_name,$varBody["nombreProducto"],$varBody["precioProducto"],$varBody["stockProducto"]);
 
                         if($result){
                             redirectWithMessage("Producto Creado Correctamente","index.php?page=Productos");
@@ -91,14 +89,14 @@ require_once 'models/security/state.model.php';
                         break;
                     case "UPD":
                         $result = "";
-                        if(!empty($_FILES['prdImageURL']['name'])){
-                            echo '<pre>'.print_r($_FILES).'</pre>';
+                        if(!empty($_FILES['imagenProducto']['name'])){
+                            //echo '<pre>'.print_r($_FILES).'</pre>';
                             $errors= array();
-                            $file_name = $_FILES['prdImageURL']['name'];
-                            $file_size =$_FILES['prdImageURL']['size'];
-                            $file_tmp =$_FILES['prdImageURL']['tmp_name'];
-                            $file_type=$_FILES['prdImageURL']['type'];
-                            $fileExt = pathinfo($_FILES['prdImageURL']['name'], PATHINFO_EXTENSION);
+                            $file_name = $_FILES['imagenProducto']['name'];
+                            $file_size =$_FILES['imagenProducto']['size'];
+                            $file_tmp =$_FILES['imagenProducto']['tmp_name'];
+                            $file_type=$_FILES['imagenProducto']['type'];
+                            $fileExt = pathinfo($_FILES['imagenProducto']['name'], PATHINFO_EXTENSION);
                             $file_upload_to = "public/imgs/";
                             //echo $fileExt;
                             $extensions= array("jpeg","jpg","png");
@@ -107,23 +105,20 @@ require_once 'models/security/state.model.php';
                                 $errors[]="extension not allowed, please choose a JPEG or PNG file.";
                             }
                           
-                            
                             if(empty($errors)==true){
                                 move_uploaded_file($file_tmp,$file_upload_to.$file_name);
                                 echo "Success";
                             }else{
                                 print_r($errors);
                             }
-                            $result=updateProduct($varBody["prdCod"],$file_upload_to.$file_name,$varBody["prdDscES"],$varBody["prdDscEN"],$varBody["prdPrice"],$varBody["prdQuantity"],
-                            $varBody["prdCategory"],$varBody["prdStock"],$varBody["prdState"]);
+                            $result=updateProduct($varBody["codProducto"],$file_upload_to.$file_name,$varBody["nombreProducto"],
+                            $varBody["precioProducto"],$varBody["stockProducto"]);
                         }
                         else{
-                            $result=updateProduct($varBody["prdCod"],$varBody["prdImageURL"],$varBody["prdDscES"],$varBody["prdDscEN"],$varBody["prdPrice"],$varBody["prdQuantity"],
-                            $varBody["prdCategory"],$varBody["prdStock"],$varBody["prdState"]);
+                            $result=updateProduct($varBody["codProducto"],$varBody["imagenProducto"],$varBody["nombreProducto"],
+                            $varBody["precioProducto"],$varBody["stockProducto"]);
                         }
                         
-                       
-                
                         if($result){
                             redirectWithMessage("Producto Modificado Correctamente","index.php?page=Productos");
                         }else{
@@ -132,10 +127,8 @@ require_once 'models/security/state.model.php';
                             echo showErrors();
                         }
                         break;
-                        
                 }
             }
-
         }
     }
     $viewData["token"] = md5("token_productos".time());
@@ -146,12 +139,5 @@ require_once 'models/security/state.model.php';
         $products = getProductByCode($_GET["cod"]);
         mergeFullArrayTo($products, $viewData);
     }
-    if(isset($viewData["prdState"])){
-        $viewData["states"] = addSelectedCmbArray($viewData["states"],'stateCod',$viewData["prdState"]);
-    }
-    if(isset($viewData["prdCategory"])){
-        $viewData["categories"] = addSelectedCmbArray($viewData["categories"],'catCod',$viewData["prdCategory"]);
-    }
-    
     renderizar("security/Producto", $viewData);
 ?>

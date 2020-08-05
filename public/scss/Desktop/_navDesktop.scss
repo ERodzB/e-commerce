@@ -32,11 +32,13 @@ header{
         right: -450px;
         li{
           width: 350px;
+          max-height: 60px;
         }
         font-size: 1em;
         justify-content: stretch;
         .logout{
           width: 100%;
+          max-height: 60px;
         }
       }
       

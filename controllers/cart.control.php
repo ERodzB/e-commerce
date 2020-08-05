@@ -1,6 +1,7 @@
 <?php 
     require_once 'models/support/cart.model.php';
     function run(){
+        // Aqui tenes que poner la llave de tu producto
         $viewData = array();
         $viewData["hasItems"]=false;
         $viewData["subtotal"]=0;
@@ -23,6 +24,7 @@
                 $viewData["hasItems"]=true;
             }
         //echo '<pre>'.print_r($viewData["products"]).'</pre>';
+        
         }//Cart Session
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             $varBody = $_POST;

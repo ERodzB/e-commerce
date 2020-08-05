@@ -1,8 +1,8 @@
 <?php
 $server = "127.0.0.1";
-$user = "kevbs";
-$pswd = "f33d3rS1nM4n0s";
-$database = "foodservice";
+$user = "farmaUser";
+$pswd = "farmacia";
+$database = "pharmacare";
 $port = "3306";
 
 $emailHost = 'smtp.gmail.com';

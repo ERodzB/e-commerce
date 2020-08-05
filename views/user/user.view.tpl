@@ -21,11 +21,6 @@
                         <button type="submit" class="button-3" id="btnCancelar">Cancelar</button>
                     </div>
                     <br>
-                    <div class="line-redDark"></div>
-                    <div class="single-buttons">
-                        <button class="button-3" id="btnChange">Cambiar Contraseña</button>
-                    </div>
-                    <br>
                 </form>
             </div>  <!--single-form-->
 </div><!--page-single-->

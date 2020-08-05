@@ -1,10 +1,12 @@
 <?php 
 require_once 'models/security/types.model.php';
-require_once 'models/security/state.model.php';
 
     $viewData = array();
     $viewData["type"] = array();
-    $viewData["states"] = getState() ;
+    $viewData["states"]=array(
+        array("stateCod"=>"ACT", "stateDsc"=>"Activo"),
+        array("stateCod"=>"INA", "stateDsc"=>"Inactivo")
+    );
     $viewData["act"] = "";
     $viewData["readonly"]="";
     $viewData["mode"]= "";
@@ -93,7 +95,6 @@ require_once 'models/security/state.model.php';
         $types = array();
         $types = getTypeByCode($_GET["cod"]);
         mergeFullArrayTo($types, $viewData);
-        $viewData["typeExp"] = date($viewData["typeExp"]);
     }
     if(isset($viewData["typeState"])){
         $viewData["states"] = addSelectedCmbArray($viewData["states"],'stateCod',$viewData["typeState"]);

@@ -5,7 +5,7 @@
   // geenrar la contraseña salada (salting)
   $usuario = obtainUserByEmail('admin@demo.com');
   if(empty($usuario)){
-    $pswd = 'testing20';
+    $pswd = 'socazon20';
     $timestamp = time();
     $password = "";
     if($timestamp%2==0){
@@ -18,7 +18,7 @@
 
     $result = newUser('admin@demo.com','Administrador',$password,$timestamp).addRole('ADM',1);
     
-    echo "Administrador creado: correo: admin@demo.com, contraseña: testing20";
+    echo "Administrador creado: correo: admin@demo.com, contraseña: socazon20";
     echo "<br /><br />Cambiarla lo mas pronto posible";
   }
 ?>

@@ -7,14 +7,6 @@
             </div>
             <br>
         </div>
-        <div class="buscador col-offset-s-1 col-offset-m-2 col-offset-4 no-padding">
-            <form action="index.php?page=Acceso&cod={{typeCod}}" method="post" class="col-s-12">
-                <input type="hidden" name="typeCod" id="typeCod" value="{{typeCod}}">
-                <input class="col-s-8 col-5 no-padding"type="text" name="txtFiltrarA" id="txtFiltrarA" {{if errorA}} placeholder="{{errorA}}" {{endif errorA}} 
-                placeholder="Filtar por Codigo..">
-                <button type="submit" id="btnFiltarA" name="btnFiltrarA" class="col-s-3 col-m-2 col-1 no-padding"><i class="fas fa-search"></i></button>
-            </form>
-        </div>
         <div class="table">
             <table class="col-s-12 no-margin no-padding">
                 <thead>
@@ -32,7 +24,7 @@
                             <input type="hidden" name="typeCod" id="typeCod" value="{{typeCod}}">
                             <input type="hidden" name="mdlCod" id="mdlCod" value="{{mdlCod}}"> 
                             <td>{{mdlCod}}</td>
-                            <td>{{mdlDscES}}</td>
+                            <td>{{mdlDsc}}</td>
                             <td>{{mdlClass}}</td>
                             <td class="col-s-2 col-m-3 col-2 no-padding">
                             <button class="button-3 col-s-9 col-m-4" name="btnDenegar" id="btnDenegar" type="submit"><i class="fas fa-ban"></i></button> 
@@ -50,14 +42,6 @@
             <h1 class="row col-s-12">Accesos Denegados</h1>
             
         </div>
-        <div class="buscador col-offset-s-1 col-offset-m-2 col-offset-4 no-padding">
-            <form action="index.php?page=Acceso&cod={{typeCod}}" method="post" class="col-s-12">
-                <input type="hidden" name="typeCod" id="typeCod" value="{{typeCod}}">
-                <input class="col-s-8 col-5 no-padding"type="text" name="txtFiltrarD" id="txtFiltrarD" value"btnFiltrarD" {{if errorD}} placeholder="{{errorD}}" {{endif errorD}} 
-                placeholder="Filtar por Codigo..">
-                <button type="submit" id="btnFiltarD" name="btnFiltrarD" class="col-s-3 col-m-2 col-1 no-padding"><i class="fas fa-search"></i></button>
-            </form>
-        </div>
         <div class="table">
             <table class="col-s-12 no-margin no-padding">
                 <thead>
@@ -74,7 +58,7 @@
                                 <input type="hidden" name="typeCod" id="typeCod" value="{{typeCod}}">
                                 <input type="hidden" name="mdlCod" id="mdlCod" value="{{mdlCod}}"> 
                                     <td>{{mdlCod}}</td>
-                                    <td>{{mdlDscES}}</td>
+                                    <td>{{mdlDsc}}</td>
                                     <td>{{mdlClass}}</td>
                                     <td class="col-s-1 col-m-3 col-2">
                                     <button class="button-3 col-s-9 col-m-4" name="btnAcceder" id="btnAcceder" type="submit"><i class="fas fa-plus-circle"></i></button> 

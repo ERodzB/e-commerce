@@ -1,10 +1,12 @@
 <?php 
 require_once 'models/security/security.model.php';
-require_once 'models/security/state.model.php';
 
     function run(){
       $viewData = array();
-      $viewData["states"] = getState() ;
+      $viewData["states"]=array(
+        array("stateCod"=>"ACT", "stateDsc"=>"Activo"),
+        array("stateCod"=>"INA", "stateDsc"=>"Inactivo")
+    );
       $viewData["act"] = "";
       $viewData["readonly"]="";
       $viewData["mode"]= "";

@@ -1,5 +1,4 @@
 .page-table{
-  background-color: $pageRedDarker;
   min-height: 100vh;
   padding-top: 5em;
   h1{
@@ -33,7 +32,6 @@
         border-spacing: 0;
         font-size: 0.7em;
         thead{
-          border: 10px solid $pageRedDarker;
           border-radius: 15px;
           background-color: $pageBlack;
           color: $pageWhite;
@@ -45,7 +43,6 @@
           }//Thead Data
         }//THead
         tbody{
-          border: 10px solid $pageRedDarker;
           tr{
             
             height: 7vh;

@@ -15,12 +15,8 @@ function newOrder($userCod,$orderDeliverTime,$orderPayment,$orderCell,$orderDire
      $orderCod= getLastInserId();
 
      if($orderCod>0){
-        if(is_array($products)){
-            foreach($products as $key => $value){
-                $result=orderDetail($orderCod,$value["prdCod"],$value["prdPrice"],$value["prdQuantity"],$value["cartQuantity"]);
-            }
-        }else{
-            $result=orderDetail($orderCod,$products["prdCod"],$products["prdPrice"],$products["prdQuantity"],$products["cartQuantity"]);
+        foreach($products as $key => $value){
+            $result=orderDetail($orderCod,$value["codProducto"],$value["precioProducto"],$value["prdQuantity"],$value["cartQuantity"]);
         }
         //echo showErrors();
         if($result)
@@ -28,36 +24,13 @@ function newOrder($userCod,$orderDeliverTime,$orderPayment,$orderCell,$orderDire
      }
      return FALSE;
 }
-function getOrders($bottom=0,$top=999){
+function getOrders(){
     $sqlStr = "SELECT orderCod,userName,unix_timestamp(orderDeliverTime) as `orderDeliverTime`, unix_timestamp(orderDate) as `orderMade`,statusCod ,statusDscES,statusDscES,orderCell ,orderDate,paymentDscES,orderShippingFee,orderIsv,orderTotal,orderDirection from `user`
     inner join `orders` on `user`.userCod = `orders`.userCod
     inner join `payment` on `orders`.orderPayment = `payment`.paymentCod 
     inner join `status` on `status`.statusCod = `orders`.orderStatus
-    order by orderDate DESC LIMIT %d, %d;";
-    $result = obtenerRegistros(sprintf($sqlStr,$bottom,$top));
-    return $result;
-}
-function getOrderStateByCode($orderCod){
-    $sqlStr = "SELECT `orderCod`,`orderStatus` FROM `orders`where `orderCod` = %d;";
-    $result = obtenerUnRegistro(sprintf($sqlStr,intval($orderCod)));
-    return $result;
-}
-function updateOrderStatus($orderCod,$orderStatus){
-    $sqlUpd = "UPDATE `orders` set `orderStatus` = '%s' where `orderCod` = %d ;";
-    $result = ejecutarNonQuery(sprintf($sqlUpd,$orderStatus,intval($orderCod)));
-    if($result > 0){
-        return true;
-    }
-    return false;
-}
-function getFilteredOrders($orderby,$statusCod,$userName,$bottom=0,$top=99){
-    $sqlStr = "SELECT orderCod,userName,unix_timestamp(orderDeliverTime) as `orderDeliverTime`, unix_timestamp(orderDate) as `orderMade`,statusCod ,statusDscES,statusDscES,orderCell ,orderDate,paymentDscES,orderShippingFee,orderIsv,orderTotal from `user`
-    inner join `orders` on `user`.userCod = `orders`.userCod
-    inner join `payment` on `orders`.orderPayment = `payment`.paymentCod 
-    inner join `status` on `status`.statusCod = `orders`.orderStatus
-    where  `statusCod` = '%s' and `userName` like  '%s'
-    order by orderDeliverTime %s LIMIT %d, %d;";
-    $result = obtenerRegistros(sprintf($sqlStr,$statusCod,$userName.'%',$orderby,$bottom,$top));
+    order by orderDate;";
+    $result = obtenerRegistros(sprintf($sqlStr));
     return $result;
 }
 
@@ -72,17 +45,17 @@ function getUserOrders($userCod,$bottom=0,$top=999){
     return $result;
 }
 function getDetailOrder($orderCod){
-    $sqlStr = "SELECT product.prdDscES,order_product.prdPrice,order_product.prdQuantity, order_product.cartQuantity FROM order_product
-    inner join product on product.prdCod = order_product.prdCod
+    $sqlStr = "SELECT product.nombreProducto,order_product.precioProducto,order_product.prdQuantity, order_product.cartQuantity FROM order_product
+    inner join product on product.codProducto = order_product.codProducto
     where order_product.orderCod = %d;";
     $result = obtenerRegistros(sprintf($sqlStr,$orderCod));
     return $result;
 }
-function orderDetail($orderCod,$prdCod,$prdPrice,$prdQuantity,$cartQuantity,$prdDiscount=0.00){
-    $sqlIns = "INSERT INTO `order_product`(`orderCod`,`prdCod`,`prdPrice`,`prdQuantity`,`cartQuantity`,`prdDiscount`) 
+function orderDetail($orderCod,$codProducto,$precioProducto,$cartQuantity){
+    $sqlIns = "INSERT INTO `order_product`(`orderCod`,`codProducto`,`precioProducto`,`cartQuantity`) 
     VALUES(%d, %d, %f,%d,%d, %f);";
-    $result = ejecutarNonQuery(sprintf($sqlIns,intval($orderCod),intval($prdCod),floatval($prdPrice),
-    intval($prdQuantity),intval($cartQuantity),floatval($prdDiscount)));
+    $result = ejecutarNonQuery(sprintf($sqlIns,intval($orderCod),intval($codProducto),floatval($precioProducto),
+    intval($cartQuantity)));
     if($result)
         return TRUE;
     else

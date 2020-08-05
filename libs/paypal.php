@@ -20,10 +20,10 @@ function createPaypalTransacction($products, $subtotal,$shipping,$total)
     $items = new \PayPal\Api\ItemList();
     foreach ($products as $products) {
         $item = new \PayPal\Api\Item();
-        $item->setSku($products["prdCod"]);
-        $item->setName($products["prdDscES"]);
+        $item->setSku($products["codProducto"]);
+        $item->setName($products["nombreProducto"]);
         $item->setQuantity($products["cartQuantity"]);
-        $item->setPrice($products["prdPrice"]);
+        $item->setPrice($products["precioProducto"]);
         $item->setCurrency('USD');
         $items->addItem($item);
     }

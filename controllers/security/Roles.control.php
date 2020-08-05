@@ -13,7 +13,6 @@
                 
                 $viewData["userRoles"] = userRoles($viewData["userCod"]);
                 $viewData["userAvalaibleRoles"] = userAvalaibleRoles($viewData["userCod"]);
-
                foreach($viewData["userAvalaibleRoles"] as $key => $value){
                 $viewData["userAvalaibleRoles"][$key]["userCod"]=$viewData["userCod"];
                }
