@@ -10,10 +10,8 @@ Version 2018
 
 ## Instrucciones de Instalación
 
-1. Descargar o clonar el repositorio de https://github.com/obetancourthunicah/simplePHPMVC.git en una carpeta accesible por el web server y el módulo de php.
+1. Con MySQL Workbench o phpMyAdmin, ejecutar los archivos .sql de la carpeta /docs/scripts en orden.
 
-2. Con MySQL Workbench o phpMyAdmin, ejecutar los archivos .sql de la carpeta /docs/scripts en orden.
+2. Ejecutar desde el navegador http://host/uri/setup.php para crear el usuario administrador.
 
-3. Ejecutar desde el navegador http://host/uri/setup.php para crear el usuario administrador.
-
-4. Ir en el navegador a http://host/uri/ para arrancar el sistema.
+3. Ir en el navegador a http://host/uri/ para arrancar el sistema.
