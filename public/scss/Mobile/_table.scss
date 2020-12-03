@@ -1,9 +1,9 @@
 .page-table{
-  background-color: $pageRedDarker;
+  background-color: $greyColor8;
   min-height: 100vh;
   padding-top: 5em;
   h1{
-    color: $pageWhite;
+    color: $mainColor3;
   }
   .buscador{
     form{
@@ -11,11 +11,13 @@
         padding: 0.2em !important;
       }
       button{
-        color: $pageRed;
+        outline: none;
+        border: none;
+        color: $mainColor7;
         background-color: $pageWhite;
         transition: all 0.2s ease-in-out;
         &:hover{
-          box-shadow: 1px 1px 6px #8d8d8d;
+          @include shadowDark();
           color: $pageWhite;
           background-color: $pageRed;
           transition: all 0.2s ease-in-out;
@@ -33,9 +35,9 @@
         border-spacing: 0;
         font-size: 0.7em;
         thead{
-          border: 10px solid $pageRedDarker;
+          @include shadowDark();
           border-radius: 15px;
-          background-color: $pageBlack;
+          background-color: $greyColor3;
           color: $pageWhite;
           th{
             text-align: center;
@@ -45,11 +47,10 @@
           }//Thead Data
         }//THead
         tbody{
-          border: 10px solid $pageRedDarker;
           tr{
             
             height: 7vh;
-            background-color: $pageBlack;
+            background-color: $greyColor7;
             td{
               width: 20%;
               padding: 0.4em;
@@ -58,7 +59,7 @@
               
               a{
                 display: inline-block;
-                background-color: $pageRedDarker;
+                background-color: $mainColor5;
                 color: $pageWhite;
                 border-radius: 7px;
                 text-align: center;
@@ -74,11 +75,10 @@
             }//TData
             
             &:hover{
-              background-color: $pageRed;
+              background-color: $greyColor6;
               color: $pageWhite;
-              box-shadow: 0px 0px 5px $pageDark;
+              @include shadowDark();
               transition: all 0.1s ease-out;
-              
               td{
                 
                 a{

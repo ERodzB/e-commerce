@@ -142,7 +142,7 @@
         <body>
             <div class="mail">
                 <div class="action-title">
-                    <h1>Food Service HN</h1>
+                    <h1>e-commerce</h1>
                 </div>
                 <div class="content">
                     <h2>Compra Realizada</h2>

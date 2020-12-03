@@ -2,13 +2,7 @@
         <br>
         <div class="action-title">
             <h1 class="row col-s-12">Manejo de Inventario</h1>
-        </div>
-        <div class="buscador col-offset-s-1 col-offset-m-2 col-offset-4 no-padding">
-            <form action="index.php?page=Productos" method="post" class="col-s-12">
-            <input class="col-s-8 col-5 no-padding"type="text" name="txtFiltar" id="txtFiltar" 
-              {{if error}} placeholder="{{error}}" {{endif error}} placeholder="Filtar nombre en Español..">
-            <button type="submit" id="btnFiltar" name="btnFiltrar" class="col-s-3 col-m-2 col-1 no-padding"><i class="fas fa-search"></i></button>
-            </form>
+            <div class="l-3"></div>
         </div>
         <div class="table">
             <table class="col-s-12 no-margin no-padding">
@@ -22,7 +16,7 @@
                     <th>Categoria</th>
                     <th>Stock</th>
                     <th>Estado</th>
-                    <th><a href="index.php?page=Producto&act=INS"><i class="fas fa-plus-circle"></i></a></th>
+                    <th><a class="icono" href="index.php?page=Producto&act=INS">Crear <i class="fas fa-plus-circle"></i></a></th>
                 </thead>
                 <tbody>
                    {{foreach product}}

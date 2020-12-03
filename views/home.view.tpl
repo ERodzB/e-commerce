@@ -1,6 +1,6 @@
 <div class="hero">
         <div class="ad">
-            <h2>Pide tu orden de Alitas ¡Ya!</h2>
+            <h2>Revisa nuestra tienda</h2>
             <button id="btnOrder">Ordenar</button>    
         </div>
     </div>

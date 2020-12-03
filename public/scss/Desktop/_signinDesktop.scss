@@ -1,17 +1,16 @@
 .flex{
-  min-height: 100vh;
+    height: 100vh;
     width: 30vw;
-    background-color: $pageRedDarker;
-    opacity: 0.9;
+    background-color: $mainColor2;
     position: absolute;
     display: block;
-    top: 0px;
+    top: 50px;
     z-index: -2;
     justify-content: center;
+    overflow: hidden;
     .form{
       border-radius: 0px;
       background-color: transparent;
-      opacity: .9;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -33,7 +32,6 @@
       button{
         cursor: pointer;
         font-size: 1.3em;
-        border: 1.5px solid $pageWhite;
         border-radius: 5px;
       }
       .errors{

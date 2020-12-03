@@ -2,6 +2,7 @@
         <br>
         <div class="action-title">
             <h1 class="row col-s-12">Roles del Usuario</h1>
+            <div class="l-3"></div>
             <div class="row col-offset-s-3 col-offset-m-8 col-offset-9 no-padding">
               <button class="button-3 col-s-7 col-m-7 col-6 col-l-5 no-padding" id="btnRegresar">Regresar</button>  
             </div>

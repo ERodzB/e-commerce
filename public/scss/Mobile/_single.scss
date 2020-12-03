@@ -1,11 +1,11 @@
 .page-single{
-  background-color: $pageRed;
+  background-color: $greyColor8;
   min-height: 100vh;
 
   padding-top: 3.5em;
   padding: 0.7em;
   h1,h2{
-    color: $pageWhite;
+    color: $mainColor5;
     font-size: 1.5em;
   }
   
@@ -14,20 +14,24 @@
     justify-content: center;
     form{
         margin-top: 2em;
-        background-color: $pageBlack;
-        opacity: 0.9;
-        box-shadow: 0px 7px 20px #2e2e2e;
+        background-color: $pageWhite;
+        @include shadow();
         border-radius: 9px;
       .single-input{
         padding: 0.5em;
         margin: 0.5em;
         label{
-          color: $pageWhite;
+          color: $greyColor4;
         }
         input,select{
+          color: $greyColor9;
+          background-color: $greyColor7;
           border: none;
           border-radius: 2px;
           padding: 0.3em !important;
+          &::placeholder{
+           color: $greyColor9; 
+          }
         }
 
       }

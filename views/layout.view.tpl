@@ -14,7 +14,7 @@
         <nav id="menu-barra" class=" ">
             <div class="title col-s-7 col-m-5 col-12 no-margin no-padding">
                 <a href="index.php?page=home">
-                    <p><img src="public/imgs/logo.png" alt="">&nbsp;Food Service</p>
+                    <p>e-commerce</p>
                 </a>
             </div>
             <div class="burger" id="hmb">

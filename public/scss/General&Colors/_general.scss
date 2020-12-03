@@ -4,15 +4,28 @@ MIXINS
 ------------------------------------*/
 @mixin buttonHover($color1, $color2) {
   background-color: $color1;
-  color: $color2;
+  color: $pageWhite;
   transition: all 0.5s ease-in-out;
   &:hover{
     cursor: pointer;
     background-color: $color2;
-    box-shadow: 0px 0px 15px $pageBlack;
-    color: $color1;
+    box-shadow: 0px 0px 6px $greyColor6;
+    color: $pageWhite;
     transition: all 0.5s ease-in-out;
   }
+}
+@mixin shadow {
+  box-shadow: 0px 0px 8px $greyColor8;
+}
+@mixin shadowDark {
+  box-shadow: 0px 0px 8px $greyColor3;
+}
+.l-3{
+  height: 6px;
+  width: 120px;
+  background-color: $mainColor4;
+  position: relative;
+  left: 34px;
 }
 /*----------------------------------
 GENERAL
@@ -34,7 +47,11 @@ ul{
 a{
   display: block;
   text-decoration: none;
-  color: $pageWhite;
+  font-weight: 600;
+  color: $mainColor2;
+}
+.icono{
+  color: $pageWhite !important;
 }
 body{
     margin: 0px;
@@ -54,15 +71,11 @@ body{
   border: none;
   border-radius: 5px;
   padding: 0.7em !important;
-  @include  buttonHover($pageRed, $pageWhite);
+  @include  buttonHover($mainColor6, $mainColor5);
 }
 .action-title{
-  background-color: $pageBlack;
-  opacity: 0.9;
-
-  box-shadow: 0px 7px 15px #2e2e2e;
   h1{
-    color: $pageWhite;
+    color: $mainColor1;
     opacity: 1;
     font-size: 2em !important;
   }

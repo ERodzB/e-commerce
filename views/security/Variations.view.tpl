@@ -2,19 +2,12 @@
         <br>
         <div class="action-title">
             <h1 class="row col-s-12">Manejo de Variaciones de {{prdDscES}}</h1>
+            <div class="l-3"></div>
             <div class="row col-offset-s-3 col-offset-m-8 col-offset-9 no-padding">
               <button class="button-3 col-s-7 col-m-7 col-6 col-l-5" id="btnRegresar">Regresar a Productos</button>
               
             </div>
             <br>
-        </div>
-        <div class="buscador col-offset-s-1 col-offset-m-2 col-offset-4 no-padding">
-            <form action="index.php?page=Variations&prdCod={{prdCod}}" method="post" class="col-s-12">
-              <input type="hidden" name="prdCod" value="{{prdCod}}">
-              <input class="col-s-8 col-5 no-padding"type="text" name="txtFiltar" id="txtFiltar" 
-                {{if error}} placeholder="{{error}}" {{endif error}}!  placeholder="Filtar por Codigo..">
-              <button type="submit" id="btnFiltar" name="btnFiltrar" class="col-s-3 col-m-2 col-1 no-padding"><i class="fas fa-search"></i></button>
-            </form>
         </div>
         <div class="table">
             <table class="col-s-12 no-margin no-padding">
@@ -22,7 +15,7 @@
                     <th>Precio</th>
                     <th>Cantidad</th>
                     <th>Estado</th>
-                    <th><a href="index.php?page=Variation&act=INS&cod=&prdCod={{prdCod}}"><i class="fas fa-plus-circle"></i></a></th>
+                    <th><a class="icono" href="index.php?page=Variation&act=INS&cod=&prdCod={{prdCod}}">Crear <i class="fas fa-plus-circle"></i></a></th>
                 </thead>
                 <tbody>
                    {{foreach variations}}

@@ -5,8 +5,8 @@ function getApiContext()
 {
     $apiContext = new \PayPal\Rest\ApiContext(
         new \PayPal\Auth\OAuthTokenCredential(
-            ' aqui va tu otra llave',     // ClientID
-            'AQUI VA TU LLAVE'      // ClientSecret
+            '',     // ClientID
+            ''      // ClientSecret
         )
     );
     return $apiContext;
@@ -44,8 +44,8 @@ function createPaypalTransacction($products, $subtotal,$shipping,$total)
     $redirectUrls = new \PayPal\Api\RedirectUrls();
 
     $redirectUrls
-        ->setReturnUrl("http://localhost/nw/foodService/index.php?page=Approved")
-        ->setCancelUrl("http://localhost/nw/foodService/index.php?page=Canceled");
+        ->setReturnUrl("http://127.0.0.1/web/e-commerce/index.php?page=Approved")
+        ->setCancelUrl("http://127.0.0.1/web/e-commerce/index.php?page=Canceled");
 
     $payment = new \PayPal\Api\Payment();
     $payment->setIntent('sale')

@@ -1,10 +1,12 @@
 .line-red{
-    background-color: $pageRed;
-    height: 18vw;
-    width: 3px;
+    background-color: $mainColor5 !important;
   }
+  .line{
+    background-color: $mainColor5 !important;
+    height: 4px;
+  }
+  
   .page-store{
-
     .filter-options{
       position: absolute;
       height: 100vh;
@@ -15,31 +17,22 @@
       button{
         font-size: 1.3em;
         padding: 1vh !important;
-        cursor: pointer;
       }
     }//filter-options
       .products{
         .items{
-          flex-direction: column;
+          flex-direction: row;
           justify-content: center;
           flex-wrap: nowrap;
           padding-top: 9vh !important;
           form{
-            position: relative;
-
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-
             width: 100%;
-
+            min-width: 250px !important;
             padding: 0.5em !important;
             .opciones{
               flex-direction: column;
               align-items: center;
               justify-content: center;
-              width: 80%;
               padding: 0.5em !important;
               label{
                 position: relative;
@@ -84,12 +77,10 @@
               h2{
                 position: static;
                 font-size: 1em;
-                color: $pageWhite;
               }
             }//foto
             h3{
               font-size: 1em;
-              color: $pageWhite
             }
             button{
               border-radius: 5px;

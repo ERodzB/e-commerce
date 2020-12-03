@@ -10,6 +10,9 @@
     width: 100%;
     z-index: -9999999999999;
   }
+  .forgot{
+    color: $pageWhite !important;
+  }
 .flex{
   position: absolute;
   display: flex;
@@ -22,8 +25,7 @@
   .form{
     margin: 1em;
     border-radius: 9px;
-    background-color: $pageRedDarker;
-    opacity: .9;
+    background-color: $mainColor2;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -48,13 +50,13 @@
     }
     button{
       font-size: 1em;
-      border: 2px solid $pageWhite;
       border-radius: 5px;
-      @include  buttonHover($pageWhite, $pageRed);
+      min-height: 50px;
+      @include buttonHover($mainColor5, $mainColor6);
       a{
         font-size: 1em;
         text-decoration: none;
-        color: $pageRed;
+        color: $pageWhite;
         &:hover{
           color: $pageWhite;
           transition: all 0.3s ease-in-out, left 0.3s ease-in-out;

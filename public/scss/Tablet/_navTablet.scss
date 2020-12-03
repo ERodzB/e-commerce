@@ -32,9 +32,10 @@
            
             position: static;
               a{
+                max-height: 80px;
                 padding: 0px;
                 &.hover:hover{
-                  color: $pageWhite;
+                  color: $greyColor5;
                   background-color: transparent;
                 }
                 &.hover:after{
@@ -60,7 +61,7 @@
         max-width: 25%;
         margin: 0.5em;
         a{
-          background-color: $pageRed;
+          background-color: $greyColor8;
           width: 100%;
           &:hover{
             transition: all 0.5s ease-in-out;

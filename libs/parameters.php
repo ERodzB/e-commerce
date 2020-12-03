@@ -1,8 +1,8 @@
 <?php
-$server = "127.0.0.1";
-$user = "kevbs";
-$pswd = "f33d3rS1nM4n0s";
-$database = "foodservice";
+$server = "foodservice.c3czvvk6nsib.us-east-1.rds.amazonaws.com";
+$user = "mysqlUser";
+$pswd = "p@ssw0rd";
+$database = "foodService";
 $port = "3306";
 
 $emailHost = 'smtp.gmail.com';

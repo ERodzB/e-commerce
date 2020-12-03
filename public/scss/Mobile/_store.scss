@@ -10,14 +10,14 @@
 .page-store{
   overflow: hidden;
   min-height: 100vh;
-  background-color: $pageRed;
+  background-color: $greyColor8;
     .filter{
       position: fixed;
       z-index: 11;
       bottom: 4vh;
       left: 5vw;
 
-      background-color: $pageBlack;
+      background-color: $greyColor3;
       height: 50px;
       width: 50px;
       border-radius: 999px;
@@ -36,7 +36,7 @@
       background-color: $pageWhite;
       opacity: 1;
       a{
-        color: $pageRed;
+        color: $mainColor5;
         transition: all 1s ease-in;
       }
       transition: all 0.8s ease-out;
@@ -52,7 +52,7 @@
       
       height: 100vh;
       color: $pageWhite;
-      background-color: $pageBlack;
+      background-color: $greyColor3;
       opacity: 0.9;
       legend{
         font-size: 1.5em;
@@ -89,9 +89,10 @@
         form{
           margin-top: 5vh;
           margin: 0.8em;
-          background-color: $pageBlack;
-          color: $pageWhite;
-          border-radius: 21px;
+          background-color: $pageWhite;
+          color: $mainColor6;
+          border-radius: 6px;
+          
           .opciones{
             display: flex;
             flex-direction: column;
@@ -175,15 +176,15 @@
           button{
             border-radius: 9px;
             border: none;
-            background-color: $pageRedDarker;
+            background-color: $mainColor6;
             color: $pageWhite;
             padding: 0.5em;
             font-size: 1.1em;
             margin: 0.8em;
+            min-height: 32px;
             transition: all 0.5s ease-in-out;
             &:hover{
               background-color: $pageWhite;
-              box-shadow: 0px 0px 8px $pageBlack;
               color: $pageRed;
               transition: all 0.5s ease-in-out;
             }
