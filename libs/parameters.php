@@ -1,5 +1,5 @@
 <?php
-$server = "foodService.c3czvvk6nsib.us-east-1.rds.amazonaws.com";
+$server = "127.0.0.1";
 $user = "eCommerUser";
 $pswd = "p@ssw0rd";
 $database = "eCommerce";

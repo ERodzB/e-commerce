@@ -5,8 +5,8 @@ function getApiContext()
 {
     $apiContext = new \PayPal\Rest\ApiContext(
         new \PayPal\Auth\OAuthTokenCredential(
-            'AcMtYHz77uCGMBA6LaLaUeam5RsXj0B1qdB9m8_S9sY5DYPXWX2YJdaQBym1ibIQON0GQAc_rttzMkWI',     // ClientID
-            'ELLoUsCAQZz1FuXZsFNvyQqSnfiI9E6Krs86Cnxcc8WKBpFXwlV0qMDClZv4tXe2t7D87F9ortdt-YHz'      // ClientSecret
+            '',     // ClientID
+            ''      // ClientSecret
         )
     );
     return $apiContext;
