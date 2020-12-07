@@ -6,8 +6,8 @@ $database = "eCommerce";
 $port = "3306";
 
 $emailHost = 'smtp.gmail.com';
-$smtpUser = 'admin@iamapineapple.me';
-$smtpSecret = 'lifhzqdfwlwlfocs';
+$smtpUser = 'tuCorreo@dominio.com';
+$smtpSecret = 'tuPassword';
 $smtpPort = "587";
 
 $host_server = 'http://localhost/web/e-commerce/';
