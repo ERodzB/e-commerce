@@ -42,7 +42,7 @@ function newProduct($prdImageURL,$prdDscES,$prdDscEN,$prdPrice,$prdQuantity,$prd
     $sqlIns = "INSERT INTO `product` (`prdImageURL`,`prdDscES`,`prdDscEN`,`prdPrice`,`prdQuantity`,`prdCategory`,`prdStock`, `prdState`)
      VALUES ('%s','%s','%s',%f,%d,%d,%d,'%s');";
      $result = ejecutarNonQuery(sprintf($sqlIns,$prdImageURL,$prdDscES,$prdDscEN,$prdPrice,$prdQuantity,$prdCategory,$prdStock,$prdState));
-     echo showErrors();
+     // echo showErrors();
      if($result)
         
         return TRUE;

@@ -78,7 +78,7 @@ body {
 }
 
 .action-title h1 {
-  color: #000933;
+  color: #293c94;
   opacity: 1;
   font-size: 2em !important;
 }
@@ -475,6 +475,10 @@ header nav .slide.show {
   transition: all 0.5s ease-in-out;
 }
 
+.back {
+  color: #f9fafb !important;
+}
+
 .signin {
   top: 0px;
   background-image: url("../imgs/signin.jpg");
@@ -603,7 +607,7 @@ header nav .slide.show {
 }
 
 .page-table {
-  background-color: #e2e6e9;
+  background-color: #f9fafb;
   min-height: 100vh;
   padding-top: 5em;
 }
@@ -663,14 +667,14 @@ header nav .slide.show {
 
 .page-table .table table tbody tr {
   height: 7vh;
-  background-color: #a7b3be;
+  background-color: #e2e6e9;
 }
 
 .page-table .table table tbody tr td {
   width: 20%;
   padding: 0.4em;
   text-align: center;
-  color: #fff;
+  color: #2d3943;
 }
 
 .page-table .table table tbody tr td a {
@@ -774,7 +778,7 @@ header nav .slide.show {
 }
 
 .page-single {
-  background-color: #e2e6e9;
+  background-color: #f9fafb;
   min-height: 100vh;
   padding-top: 3.5em;
   padding: 0.7em;
@@ -812,27 +816,27 @@ header nav .slide.show {
 }
 
 .page-single .single-form form .single-input input, .page-single .single-form form .single-input select {
-  color: #f9fafb;
-  background-color: #a7b3be;
+  color: #1e272f;
+  background-color: #e2e6e9;
   border: none;
   border-radius: 2px;
   padding: 0.3em !important;
 }
 
 .page-single .single-form form .single-input input::-webkit-input-placeholder, .page-single .single-form form .single-input select::-webkit-input-placeholder {
-  color: #f9fafb;
+  color: #6f8190;
 }
 
 .page-single .single-form form .single-input input:-ms-input-placeholder, .page-single .single-form form .single-input select:-ms-input-placeholder {
-  color: #f9fafb;
+  color: #6f8190;
 }
 
 .page-single .single-form form .single-input input::-ms-input-placeholder, .page-single .single-form form .single-input select::-ms-input-placeholder {
-  color: #f9fafb;
+  color: #6f8190;
 }
 
 .page-single .single-form form .single-input input::placeholder, .page-single .single-form form .single-input select::placeholder {
-  color: #f9fafb;
+  color: #6f8190;
 }
 
 .page-single .single-form form .single-buttons {
@@ -862,7 +866,7 @@ header nav .slide.show {
 .page-store {
   overflow: hidden;
   min-height: 100vh;
-  background-color: #e2e6e9;
+  background-color: #f9fafb;
 }
 
 .page-store .filter {
@@ -1101,14 +1105,13 @@ header nav .slide.show {
 }
 
 .page-store .products .items form button:hover {
-  background-color: #fff;
-  color: #293c94;
+  background-color: #7989d2;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
 .page-cart {
-  background-color: #e2e6e9;
+  background-color: #f9fafb;
   min-height: 100vh;
   padding: 1em;
   text-align: center;
@@ -1404,7 +1407,7 @@ header nav .slide.show {
 .page-directions {
   padding: 10vh 0.5em 0.5em 0.5em !important;
   min-height: 100vh;
-  background-color: #293c94;
+  background-color: #f9fafb;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1459,7 +1462,7 @@ header nav .slide.show {
 }
 
 .page-directions .check-info {
-  background-color: #1d1d1d81;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1473,6 +1476,8 @@ header nav .slide.show {
   -webkit-box-align: left;
       -ms-flex-align: left;
           align-items: left;
+  -webkit-box-shadow: 0px 0px 8px #e2e6e9;
+          box-shadow: 0px 0px 8px #e2e6e9;
 }
 
 .page-directions .check-info .row {
@@ -1484,6 +1489,7 @@ header nav .slide.show {
   border-radius: 3px;
   border: none;
   resize: none;
+  background-color: #e2e6e9;
 }
 
 .page-directions .check-info textarea {
@@ -1491,6 +1497,7 @@ header nav .slide.show {
 }
 
 .page-directions .check-info h2 {
+  color: #293c94;
   font-size: 1.2em;
   margin: 0.5em;
   text-align: left;
@@ -1707,19 +1714,25 @@ header nav .slide.show {
     padding: 1vh !important;
   }
   .page-store .products .items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
     padding-top: 9vh !important;
   }
   .page-store .products .items form {
-    width: 100%;
+    width: 30%;
     min-width: 250px !important;
     padding: 0.5em !important;
   }
@@ -2395,7 +2408,7 @@ header nav .slide.show {
     left: 2vw;
     width: 20vw;
     height: auto;
-    color: #fff;
+    color: #1b2d7e;
     background-color: transparent;
     opacity: 1;
     -webkit-transition: -webkit-transform 0.7s ease-in;
@@ -2414,7 +2427,7 @@ header nav .slide.show {
     border: none;
     font-size: 1.3em;
     padding: 1vh !important;
-    color: #fff;
+    color: #1b2d7e;
   }
   .page-store .filter-options button:hover {
     color: #000;
@@ -2426,16 +2439,22 @@ header nav .slide.show {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     position: relative;
+    -ms-flex-wrap: wrap !important;
+        flex-wrap: wrap !important;
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: flex-start !important;
     top: 10vh;
     margin-bottom: 20vw;
     padding-top: 6vh !important;
   }
   .page-store .products .items form {
     padding: 0.4em !important;
+    width: 20%;
     border-radius: 8px;
     -webkit-box-shadow: 0px 0px 8px #e2e6e9;
             box-shadow: 0px 0px 8px #e2e6e9;
@@ -2537,10 +2556,9 @@ header nav .slide.show {
   }
   .page-store .products .items form button {
     border-radius: 5px;
-    padding: 0.1em;
-    font-size: 1em;
+    font-size: 0.7em;
     margin: 0.5em;
-    width: 80%;
+    width: 50%;
     cursor: pointer;
   }
   .page-checkout {

@@ -32,7 +32,7 @@ require_once 'models/security/state.model.php';
         if(isset($_POST["btnConfirmar"])){
             $varBody = array();
             $varBody = $_POST;
-            //echo '<pre>'.print_r($varBody).'</pre>';
+            //// echo '<pre>'.print_r($varBody).'</pre>';
             mergeFullArrayTo($varBody, $viewData);
             $validated = true;
             if($varBody["token"]!=$_SESSION["status_token"]){

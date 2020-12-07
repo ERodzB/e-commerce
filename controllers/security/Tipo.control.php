@@ -33,7 +33,7 @@ require_once 'models/security/state.model.php';
         if(isset($_POST["btnConfirmar"])){
             $varBody = array();
             $varBody = $_POST;
-            //echo '<pre>'.print_r($varBody).'</pre>';
+            //// echo '<pre>'.print_r($varBody).'</pre>';
             mergeFullArrayTo($varBody, $viewData);
             $validated = true;
             if($varBody["token"]!=$_SESSION["tipos_token"]){
@@ -53,7 +53,7 @@ require_once 'models/security/state.model.php';
                             $varBody["typeExp"] = '"'.$varBody["typeExp"].'"';
                             $result=newType($varBody["typeCod"],$varBody["typeDsc"],$varBody["typeState"], $varBody["typeExp"]);
                         }
-                        echo showErrors ();
+                        // echo showErrors ();
                         if($result){
                             redirectWithMessage("Tipo Creado Correctamente","index.php?page=Tipos");
                         }else{
@@ -73,7 +73,7 @@ require_once 'models/security/state.model.php';
                             $varBody["typeExp"] = '"'.$varBody["typeExp"].'"';
                             $result=updateType($varBody["typeCod"],$varBody["typeDsc"],$varBody["typeState"],$varBody["typeExp"]);
                         }
-                        echo $result;
+                        // echo $result;
                         if($result){
                             redirectWithMessage("Tipo Modificado Correctamente","index.php?page=Tipos");
                         }else{

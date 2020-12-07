@@ -22,7 +22,7 @@ function newOrder($userCod,$orderDeliverTime,$orderPayment,$orderCell,$orderDire
         }else{
             $result=orderDetail($orderCod,$products["prdCod"],$products["prdPrice"],$products["prdQuantity"],$products["cartQuantity"]);
         }
-        //echo showErrors();
+        //// echo showErrors();
         if($result)
             return true;
      }

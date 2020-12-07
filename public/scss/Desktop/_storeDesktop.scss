@@ -14,7 +14,7 @@
     left:2vw;
     width: 20vw;
     height: auto;
-    color: $pageWhite;
+    color: $mainColor4;
     
     background-color: transparent;
     opacity: 1;
@@ -31,7 +31,7 @@
       border: none;
       font-size: 1.3em;
       padding: 1vh !important;
-      color: $pageWhite;
+      color: $mainColor4;
       &:hover{
         color: $pageDark;
       }
@@ -44,14 +44,16 @@
     .products{
       .items{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         position: relative;
+        flex-wrap: wrap !important;
+        align-items: flex-start !important;
         top: 10vh;
         margin-bottom: 20vw;
         padding-top: 6vh !important;
         form{
           padding: 0.4em !important;
- 
+          width: 20%;
           border-radius: 8px;
           @include shadow();
           .opciones{
@@ -127,10 +129,9 @@
           }
           button{
             border-radius: 5px;
-            padding: 0.1em;
-            font-size: 1em;
+            font-size: 0.7em;
             margin: 0.5em;
-            width: 80%;
+            width: 50%;
             cursor: pointer;
           }
         }//Form

@@ -45,7 +45,7 @@
             </div>
             <div class="single-input row">
                 <br>
-                <label class="left" for="prdPrice">Porciones Ofrecidas del Producto</label><br>
+                <label class="left" for="prdPrice">Cantidad Ofrecida del Producto</label><br>
                 <input class="col-s-12 col-m-11 col-12 no-padding" type="text" name="prdQuantity" id="prdQuantity"
                     placeholder="Porciones del Producto" value="{{prdQuantity}}" {{prdQuantity}} {{readonly}}>
             </div>

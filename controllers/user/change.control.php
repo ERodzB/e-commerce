@@ -6,7 +6,7 @@ require_once 'models/security/security.model.php';
             $info = obtainUserByEmail($_SESSION["userEmail"]);
             mergeFullArrayTo($info,$viewData);
         }
-        //echo '<pre>'.print_r($viewData).'</pre>';
+        //// echo '<pre>'.print_r($viewData).'</pre>';
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             include_once "libs/validadores.php";
             if(isset($_POST["btnConfirmar"])){

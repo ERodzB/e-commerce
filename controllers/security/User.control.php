@@ -38,7 +38,7 @@ require_once 'models/security/state.model.php';
           if(isset($_POST["btnConfirmar"])){
               $varBody = array();
               $varBody = $_POST;
-              //echo '<pre>'.print_r($varBody).'</pre>';
+              //// echo '<pre>'.print_r($varBody).'</pre>';
               mergeFullArrayTo($varBody, $viewData);
               $validated = true;
               if($varBody["token"]!=$_SESSION["user_token"]){
@@ -116,7 +116,7 @@ require_once 'models/security/state.model.php';
       if(isset($viewData["userState"])){
           $viewData["states"] = addSelectedCmbArray($viewData["states"],'stateCod',$viewData["userState"]);
       }
-      //echo '<pre>'.print_r($viewData).'</pre>';
+      //// echo '<pre>'.print_r($viewData).'</pre>';
       renderizar("security/User", $viewData);
     }
     run();

@@ -56,7 +56,7 @@ require_once 'models/security/state.model.php';
                         $file_type=$_FILES['prdImageURL']['type'];
                         $fileExt = pathinfo($_FILES['prdImageURL']['name'], PATHINFO_EXTENSION);
                         $file_upload_to = "public/imgs/";
-                        //echo $fileExt;
+                        //// echo $fileExt;
                         $extensions= array("jpeg","jpg","png");
                         
                         if(in_array($fileExt,$extensions)=== false){
@@ -69,7 +69,7 @@ require_once 'models/security/state.model.php';
                         
                         if(empty($errors)==true){
                             move_uploaded_file($file_tmp,$file_upload_to.$file_name);
-                            echo "Success";
+                            // echo "Success";
                         }else{
                             print_r($errors);
                         }
@@ -92,7 +92,7 @@ require_once 'models/security/state.model.php';
                     case "UPD":
                         $result = "";
                         if(!empty($_FILES['prdImageURL']['name'])){
-                            echo '<pre>'.print_r($_FILES).'</pre>';
+                            // echo '<pre>'.print_r($_FILES).'</pre>';
                             $errors= array();
                             $file_name = $_FILES['prdImageURL']['name'];
                             $file_size =$_FILES['prdImageURL']['size'];
@@ -100,7 +100,7 @@ require_once 'models/security/state.model.php';
                             $file_type=$_FILES['prdImageURL']['type'];
                             $fileExt = pathinfo($_FILES['prdImageURL']['name'], PATHINFO_EXTENSION);
                             $file_upload_to = "public/imgs/";
-                            //echo $fileExt;
+                            //// echo $fileExt;
                             $extensions= array("jpeg","jpg","png");
                             
                             if(in_array($fileExt,$extensions)=== false){
@@ -110,7 +110,7 @@ require_once 'models/security/state.model.php';
                             
                             if(empty($errors)==true){
                                 move_uploaded_file($file_tmp,$file_upload_to.$file_name);
-                                echo "Success";
+                                // echo "Success";
                             }else{
                                 print_r($errors);
                             }
@@ -129,7 +129,7 @@ require_once 'models/security/state.model.php';
                         }else{
                             $viewData["hasErrors"]=true;
                             $viewData["errors"][]="No se pudo modificar el Producto";
-                            echo showErrors();
+                            // echo showErrors();
                         }
                         break;
                         

@@ -39,7 +39,7 @@ function run(){
     }
 
     $products = getCartItems($viewData["page"]);
-    //echo '<pre>'.print_r($products).'</pre>';
+    //// echo '<pre>'.print_r($products).'</pre>';
 
     mergeFullArrayTo($products,$viewData);
 
@@ -51,7 +51,7 @@ function run(){
             
             $validated = true;
             mergeFullArrayTo($varBody, $viewData);
-            //echo '<pre>'.print_r($varBody).'</pre>';
+            //// echo '<pre>'.print_r($varBody).'</pre>';
             if($varBody["token"]!=$_SESSION["checkout_token"]){
                 error_log("Critical Token Error");
                 redirectWithMessage("Parece que algo se quemo en la cocina, vuelve a intentar", "index.php?page=Checkout");
@@ -59,7 +59,7 @@ function run(){
             
             if(getTotalHourOrders($varBody["orderDeliveryTime"])>$management["maxOrderManagement"]){
                 $validated = false;
-                echo "<script>alert(El Horario escogido ya no se encuentra disponible);</script>";
+                // echo "<script>alert(El Horario escogido ya no se encuentra disponible);</script>";
                 $viewData["hErr"]="error";
             }
             if(!validPhone($varBody["orderCell"])){
@@ -93,7 +93,7 @@ function run(){
                 $orderDirection = "Barrio/Colonia: ".$hood["hoodDsc"]."----> Direccion Especifica: ".$varBody["directStreet"];
                 $result2=newOrder($_SESSION["userCod"],$varBody["orderDeliveryTime"],$varBody["btnPayment"],
                 $varBody["orderCell"],$orderDirection,$viewData["shipping"],$viewData["total"],$products["products"]);
-                echo showErrors().'<br>';
+                // echo showErrors().'<br>';
                 //Si se pudo crear la orden prosigue
                 if($result2){
                     $_SESSION["userCell"] = $varBody["orderCell"];
@@ -104,7 +104,7 @@ function run(){
                     }
                     //si ni a paypal pudo ir
                     $viewData["returndata"] = $payPalReturn;
-                    echo $viewData["returndata"];
+                    // echo $viewData["returndata"];
 
                 }else{
                     $viewData["hasErrors"]=true;
@@ -148,21 +148,21 @@ function createCmbHours($activeHours,$activeDays,$maxOrders){
     //DATE_RFC2822
     //Si la hora en que el usuario se mete es menor a 2 horas crea el horario completo
     if($hourNow2<$startingDay){
-        //echo "wat 1 <br>"   ;
+        //// echo "wat 1 <br>"   ;
         return makeHoursArray($totalHours,$x=0,$startingDay,$endingDay,$activeHours,$activeDays,$maxOrders);
     }
     //Si la hora en que el usuario se ingresa esta cercano a la hora de operacion para iniciar  1 hora despues
     if($hourNow<$startingDay && $hourNow<$endingDay){
-       //echo "wat 2 <br>";
+       //// echo "wat 2 <br>";
        return makeHoursArray($totalHours,$x=1,$startingDay,$endingDay,$activeHours,$activeDays,$maxOrders);
     }
     //Si entra en la hora de operacion
     if($hourNow>$startingDay && $hourNow2<$endingDay){
-        //echo "wat 3 <br>";
+        //// echo "wat 3 <br>";
         return makeHoursArray($totalHours,$x=2,$hourNow,$endingDay,$activeHours,$activeDays,$maxOrders);
     }
     // si entra horas despues de operacion
-     //echo "wat 4 <br>";
+     //// echo "wat 4 <br>";
      $nextDay = strtotime('tomorrow midnight');
      $totalDays = totalDays($activeDays,$nextDay)+1;
      $startingDay = strtotime('+'.$totalDays.' day',$startingDay);

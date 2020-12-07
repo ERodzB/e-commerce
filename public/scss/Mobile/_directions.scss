@@ -1,7 +1,7 @@
 .page-directions{ //trbl
     padding: 10vh 0.5em 0.5em 0.5em !important;
     min-height: 100vh;
-    background-color: $pageRed;
+    background-color: $greyColor9;
     display: flex;
     flex-direction: column; 
     .direcciones{
@@ -27,12 +27,12 @@
       
     }//total,Check-info
     .check-info{
-      background-color: $pageBlack;
+      background-color: $pageWhite;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: left;
-  
+      @include shadow();
       .row{
         margin: 1.5em;
       }
@@ -41,11 +41,13 @@
         border-radius: 3px;
         border: none;
         resize: none;
+        background-color: $greyColor8;
       }//input,select,textarea
       textarea{
         height: 250px;
       }
       h2{
+        color: $mainColor5;
         font-size: 1.2em;
         margin: 0.5em;
         text-align: left;

@@ -32,7 +32,7 @@ require_once 'models/security/state.model.php';
         if(isset($_POST["btnConfirmar"])){
             $varBody = array();
             $varBody = $_POST;
-            echo '<pre>'.print_r($varBody).'</pre>';
+            // echo '<pre>'.print_r($varBody).'</pre>';
             mergeFullArrayTo($varBody, $viewData);
             $validated = true;
             if($varBody["token"]!=$_SESSION["payments_token"]){
@@ -44,7 +44,7 @@ require_once 'models/security/state.model.php';
                     case "INS":
                         $result = "";
                         $result=newPayment($varBody["paymentCod"],$varBody["paymentDscES"],$varBody["paymentDscEN"],$varBody["paymentLib"],$varBody["paymentState"]);
-                        echo showErrors();
+                        // echo showErrors();
                         if($result){
                             redirectWithMessage("Forma de Pago Creada Correctamente","index.php?page=Pagos");
                         }else{

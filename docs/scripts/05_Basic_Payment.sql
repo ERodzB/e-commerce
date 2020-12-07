@@ -1,1 +1,1 @@
-INSERT INTO `foodService`.`payment` (`paymentCod`, `paymentDscES`, `paymentDscEN`, `paymentLib`, `paymentState`) VALUES ('PPL', 'Pago Con Paypal', 'Paypal Payment', 'paypal', 'ACT');
+INSERT INTO `eCommerce`.`payment` (`paymentCod`, `paymentDscES`, `paymentDscEN`, `paymentLib`, `paymentState`) VALUES ('PPL', 'Pago Con Paypal', 'Paypal Payment', 'paypal', 'ACT');

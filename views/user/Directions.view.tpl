@@ -1,5 +1,6 @@
 <div class="page-directions">
-    <div class="row action-title col-s-12"><h1>Información General</h1></div>
+    <div class="row action-title col-s-12"><h1>Información General</h1>
+    <div class="l-3"></div></div>
     <br>
     <div class="check-info col-s-12 col-m-12 col-8 col-offset-2 no-padding">
         <form action="index.php?page=Directions" method="POST" class="{{show}}">

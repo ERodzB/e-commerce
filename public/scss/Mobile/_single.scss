@@ -1,5 +1,5 @@
 .page-single{
-  background-color: $greyColor8;
+  background-color: $greyColor9;
   min-height: 100vh;
 
   padding-top: 3.5em;
@@ -24,13 +24,13 @@
           color: $greyColor4;
         }
         input,select{
-          color: $greyColor9;
-          background-color: $greyColor7;
+          color: $greyColor2;
+          background-color: $greyColor8;
           border: none;
           border-radius: 2px;
           padding: 0.3em !important;
           &::placeholder{
-           color: $greyColor9; 
+           color: $greyColor5; 
           }
         }
 

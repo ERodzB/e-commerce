@@ -1,5 +1,5 @@
 .page-table{
-  background-color: $greyColor8;
+  background-color: $greyColor9;
   min-height: 100vh;
   padding-top: 5em;
   h1{
@@ -50,12 +50,12 @@
           tr{
             
             height: 7vh;
-            background-color: $greyColor7;
+            background-color: $greyColor8;
             td{
               width: 20%;
               padding: 0.4em;
               text-align: center;
-              color: $pageWhite;
+              color: $greyColor3;
               
               a{
                 display: inline-block;

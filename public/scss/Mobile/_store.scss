@@ -10,7 +10,7 @@
 .page-store{
   overflow: hidden;
   min-height: 100vh;
-  background-color: $greyColor8;
+  background-color: $greyColor9;
     .filter{
       position: fixed;
       z-index: 11;
@@ -184,8 +184,7 @@
             min-height: 32px;
             transition: all 0.5s ease-in-out;
             &:hover{
-              background-color: $pageWhite;
-              color: $pageRed;
+              background-color: $mainColor7;
               transition: all 0.5s ease-in-out;
             }
           }

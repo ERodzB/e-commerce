@@ -48,7 +48,7 @@ require_once 'models/security/state.model.php';
                         
                          $result=newVariation($varBody["variationPrice"],$varBody["variationQuantity"],$varBody["variationState"],$varBody["prdCod"]);
                         
-                        echo showErrors ();
+                        // echo showErrors ();
                         if($result){
                             redirectWithMessage("Variacion Creada Correctamente","index.php?page=Variations&prdCod=".$varBody["prdCod"]);
                         }else{
@@ -62,7 +62,7 @@ require_once 'models/security/state.model.php';
                         
                         $result=updateVariation($varBody["variationCod"],$varBody["variationPrice"],$varBody["variationQuantity"],$varBody["variationState"],
                         $varBody["prdCod"]);
-                        echo $result;
+                        // echo $result;
                         if($result){
                             redirectWithMessage("Variacion Modificada Correctamente","index.php?page=Variations&prdCod=".$varBody["prdCod"]);
                         }else{

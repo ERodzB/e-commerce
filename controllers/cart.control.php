@@ -13,7 +13,7 @@
         if(!isset($_SESSION["cart"])){
             $_SESSION["cart"]=array();
         }
-        //echo '<pre>'.print_r($_SESSION["cart"]).'</pre>';
+        //// echo '<pre>'.print_r($_SESSION["cart"]).'</pre>';
         if(isset($_SESSION["cart"])){
             $products = getCartItems($viewData["page"]);
             mergeFullArrayTo($products,$viewData);
@@ -22,11 +22,11 @@
             if($viewData["subtotal"]>0){
                 $viewData["hasItems"]=true;
             }
-        //echo '<pre>'.print_r($viewData["products"]).'</pre>';
+        //// echo '<pre>'.print_r($viewData["products"]).'</pre>';
         }//Cart Session
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             $varBody = $_POST;
-            //echo '<pre>'.print_r($_POST).'</pre>';
+            //// echo '<pre>'.print_r($_POST).'</pre>';
             if(isset($_POST["btnPagar"])){
                 if(empty($_SESSION["cart"]) || $_SESSION["cartSize"]==0){
                     redirectWithMessage("Parece que tu canasta esta vacia", "index.php?page=cartL");
@@ -46,13 +46,13 @@
             }//btnLess
 
             if(isset($_POST["btnTrash"])){
-                echo "hola";
+                //// echo "hola";
                 trashCart($varBody["cartCod"],$varBody["prdQuantity"]);
                 redirectToUrl("index.php?page=".$viewData["page"]);
             }//btnTrash
         }//Server Request
         
-        //echo '<pre>'.print_r($_SESSION["cart"]).'</pre>';
+        //// echo '<pre>'.print_r($_SESSION["cart"]).'</pre>';
         renderizar("cart", $viewData);
     }
     run();

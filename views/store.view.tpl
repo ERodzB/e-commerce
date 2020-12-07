@@ -19,7 +19,7 @@
             <a href="#"><i class="fas fa-list-ul"></i></a>
         </div>
         <div class="products">
-            <div class="items col-s-12 col-m-3 col-3 col-l-2 center col-offset-m-4 col-offset-6 col-offset-l-5 no-padding">
+            <div class="items col-s-12 col-m-10 col-9 col-l-9 center col-offset-m-1 col-offset-3 col-offset-l-3 no-padding">
                 {{foreach products}}
                   <form id="formProducts"class="col-s-12 col-m-3 col-3 no-padding" action="index.php?page={{page}}" method="post">
                     <input type="hidden" name="prdCod" value="{{prdCod}}">
@@ -31,7 +31,7 @@
                       <div class="line-red"></div>
                       
                       <div class="opciones">
-                          <h3>Platos</h3>
+                          <h3>Opciones</h3>
                             <label>
                               <input name="radio"type="radio" value="{{prdCod}}" checked>{{prdQuantity}} {{prdDscES}} ${{prdPrice}}
                               <span class="checkmark"></span>

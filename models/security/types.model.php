@@ -26,7 +26,7 @@ function newType($typeCod,$typeDsc,$typeState,$typeExp='NULL'){
     $sqlIns = "INSERT INTO `type` (`typeCod`, `typeDsc`, `typeState`, `typeExp`)
      VALUES ('%s', '%s', '%s', %s );";
      $result = ejecutarNonQuery(sprintf($sqlIns, $typeCod, $typeDsc, $typeState, $typeExp));
-    echo $result;
+    // echo $result;
      if($result)
         
         return TRUE;
@@ -36,7 +36,7 @@ function newType($typeCod,$typeDsc,$typeState,$typeExp='NULL'){
 function updateType($typeCod,$typeDsc,$typeState,$typeExp='NULL'){
     $sqlUpd = "UPDATE `type` SET `typeDsc` = '%s' , `typeState` = '%s', `typeExp` = %s  WHERE (`typeCod` = '%s');";
     $result = ejecutarNonQuery(sprintf($sqlUpd, $typeDsc, $typeState, $typeExp,$typeCod));
-    echo $result;
+    // echo $result;
     return ($result > 0);
 }
 ?>

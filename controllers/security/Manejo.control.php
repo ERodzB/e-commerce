@@ -44,7 +44,7 @@ require_once 'models/security/state.model.php';
             $varBody = array();
             $varBody = $_POST;
 
-            echo '<pre>'.print_r($varBody).'</pre>';
+            // echo '<pre>'.print_r($varBody).'</pre>';
 
             mergeFullArrayTo($varBody, $viewData);
             $validated = true;
@@ -89,7 +89,7 @@ require_once 'models/security/state.model.php';
                     case "ATI":
                         $result = "";
                         $result=activateManagement($_GET["act"]);
-                        echo $result;
+                        // echo $result;
                         if($result){
                             redirectWithMessage("Horario Activado Correctamente","index.php?page=Manejos");
                         }else{
@@ -122,8 +122,8 @@ require_once 'models/security/state.model.php';
         $viewData["hourStart"] = addSelectedCmbArray($viewData["hourStart"],'hour',$hours[0]);
         $viewData["hourEnd"] = addSelectedCmbArray($viewData["hourEnd"],'hour',$hours[1]);
         
-        //echo '<pre>'.print_r($hours).'</pre>';
-        //echo '<pre>'.print_r($viewData["hourStart"]).'</pre>';
+        //// echo '<pre>'.print_r($hours).'</pre>';
+        //// echo '<pre>'.print_r($viewData["hourStart"]).'</pre>';
     }
     if(isset($viewData["daysManagement"])){
         $days = explode(',',$viewData["daysManagement"]);
@@ -145,7 +145,7 @@ require_once 'models/security/state.model.php';
         for($x = 0 ; $x<=22; $x++){
             $hour[] = array("hour"=>date('h:00 A',strtotime('-'.$hourdate+$x.' hours')));    
         }
-            //echo '<pre>'.print_r($hour).'</pre>';
+            //// echo '<pre>'.print_r($hour).'</pre>';
         return $hour;
     }
     function creatCheckDays(){

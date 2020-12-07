@@ -4,7 +4,7 @@
 <div class="flex col-s-12 col-m-12 col-2 no-margin no-padding">
 <form id="formLogin" action="index.php?page=forgot" method="POST" class="form col-12 no-margin">
     <br>
-    <a href="index.php?page=login">Regresar</a>
+    <a class="back" href="index.php?page=login">Regresar</a>
     <h1>Olvido de Contaseña</h1>
     <div class="bar col-s-12 col-m-12 col-12 no-padding"> </div>
     <br>

@@ -27,6 +27,7 @@ require_once "libs/sendmail.php";
                     $viewData["xErr"]="error";
                     $validated=false;
                 }
+                $validated=true;
                 if($validated){
                     $timestamp = time();
                     
@@ -44,6 +45,8 @@ require_once "libs/sendmail.php";
                     }else{
                         redirectWithMessage("Sucedio un error, vuelve a intentar", "index.php?page=login");
                     }
+                } else{
+                    //// echo '<pre>'.print_r($validated).'</pre>';
                 }
             }
         }
@@ -65,12 +68,12 @@ require_once "libs/sendmail.php";
                     }
         
                     .mail {
-                    background-color: #d80000;
+                    background-color: #f7f9fc;
                     padding: 1em;
                     }
         
                     .action-title {
-                    background-color: #7a0202;
+                    background-color: #040c5c;
                     padding: 0.5em;
                     margin: 1em 0px;
                     border-radius: 9px;
@@ -87,7 +90,7 @@ require_once "libs/sendmail.php";
                     border-radius: 9px;
                     text-align: center;
                     margin: 0em;
-                    background-color: #7a0202;
+                    background-color: #040c5c;
                     padding: 1em;
                     color: #fff;
                     }
@@ -99,7 +102,7 @@ require_once "libs/sendmail.php";
                     .content .messages{
                         padding: 1.5em;
                         border-radius: 9px;
-                        background-color: #d80000;
+                        background-color: #f7f9fc;
                     }
                     .content .messages li {
                         list-style: none;
@@ -124,7 +127,7 @@ require_once "libs/sendmail.php";
                         padding: 2em;
                         border-radius: 9px;
                         font-size: 1.5em;
-                        background-color: #d80000;
+                        background-color: #f7f9fc;
                     }
                     }
         
@@ -133,11 +136,11 @@ require_once "libs/sendmail.php";
             <body>
                 <div class="mail">
                     <div class="action-title">
-                        <h1>Food Service HN</h1>
+                        <h1>e-commerce</h1>
                     </div>
                     <div class="content">
                     <ul class="messages"> 
-                        <li><a href="localhost/nw/foodService/index.php?page=pwsd&userEmail='.$email.'&token='.$token.'">Cambiar Contraseña</a></li> 
+                        <li><a href="'.$_SERVER["SERVER_MVC"].'index.php?page=pwsd&userEmail='.$email.'&token='.$token.'">Cambiar Contraseña</a></li> 
                     </ul>                
                     </div>
                 </div>

@@ -31,7 +31,7 @@
                 $role = $varBody["typeDsc"];
                 
                 if(removeRole($varBody["typeCod"],$varBody["userCod"])){
-                    echo "<script>alert('se Quito el Rol de $role');</script>";
+                    // echo "<script>alert('se Quito el Rol de $role');</script>";
                     $viewData["userRoles"] = userRoles($viewData["userCod"]);
                     $viewData["userAvalaibleRoles"] = userAvalaibleRoles($viewData["userCod"]);
                     foreach($viewData["userAvalaibleRoles"] as $key => $value){
@@ -39,13 +39,13 @@
                        }
                 }
                 else{
-                    echo "<script>alert('Ocurrio un error');</script>";
+                    // echo "<script>alert('Ocurrio un error');</script>";
                 }
             }
             if(isset($_POST["btnAcceder"])){
                 $role = $varBody["typeDsc"];
                 if(addRole($varBody["typeCod"],$varBody["userCod"])){
-                    echo "<script>alert('se dio el Rol de $role');</script>";
+                    // echo "<script>alert('se dio el Rol de $role');</script>";
                     $viewData["userRoles"] = userRoles($viewData["userCod"]);
                     $viewData["userAvalaibleRoles"] = userAvalaibleRoles($viewData["userCod"]);
                     foreach($viewData["userAvalaibleRoles"] as $key => $value){
@@ -53,9 +53,9 @@
                        }
                 }
                 else{
-                    echo "<script>alert('Ocurrio un error');</script>";
+                    // echo "<script>alert('Ocurrio un error');</script>";
                 }
-                echo showErrors();
+                // echo showErrors();
             }
         }
 

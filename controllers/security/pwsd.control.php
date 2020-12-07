@@ -15,7 +15,7 @@ require_once 'models/security/security.model.php';
             redirectWithMessage("Pedido Equivocado, vuelve a intentar", "index.php?page=login");
         }
         
-        //echo '<pre>'.print_r($viewData).'</pre>';
+        //// echo '<pre>'.print_r($viewData).'</pre>';
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             include_once "libs/validadores.php";
             if(isset($_POST["btnConfirmar"])){

@@ -5,8 +5,8 @@ function getApiContext()
 {
     $apiContext = new \PayPal\Rest\ApiContext(
         new \PayPal\Auth\OAuthTokenCredential(
-            '',     // ClientID
-            ''      // ClientSecret
+            'AcMtYHz77uCGMBA6LaLaUeam5RsXj0B1qdB9m8_S9sY5DYPXWX2YJdaQBym1ibIQON0GQAc_rttzMkWI',     // ClientID
+            'ELLoUsCAQZz1FuXZsFNvyQqSnfiI9E6Krs86Cnxcc8WKBpFXwlV0qMDClZv4tXe2t7D87F9ortdt-YHz'      // ClientSecret
         )
     );
     return $apiContext;
@@ -38,14 +38,14 @@ function createPaypalTransacction($products, $subtotal,$shipping,$total)
 
     $transaction = new \PayPal\Api\Transaction();
     $transaction->setAmount($amount);
-    $transaction->setNoteToPayee("Venta de comida de la empresa foodService");
+    $transaction->setNoteToPayee("Venta de comida de la empresa eCommerce");
     $transaction->setItemList($items);
 
     $redirectUrls = new \PayPal\Api\RedirectUrls();
 
     $redirectUrls
-        ->setReturnUrl("http://127.0.0.1/web/e-commerce/index.php?page=Approved")
-        ->setCancelUrl("http://127.0.0.1/web/e-commerce/index.php?page=Canceled");
+        ->setReturnUrl($_SERVER["SERVER_MVC"]."index.php?page=Approved")
+        ->setCancelUrl($_SERVER["SERVER_MVC"]."index.php?page=Canceled");
 
     $payment = new \PayPal\Api\Payment();
     $payment->setIntent('sale')

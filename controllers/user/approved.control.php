@@ -74,17 +74,17 @@
             <meta charset="UTF-8">
             <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Food Service</title>
+            <title>e-commerce</title>
             <style>
                 * {
                 font-family: "Poppins", sans-serif;
                 }
                 .mail {
-                background-color: #d80000;
+                background-color: #f7f9fc;
                 padding: 1em;
                 }
                 .action-title {
-                background-color: #7a0202;
+                background-color: #040c5c;
                 padding: 0.5em;
                 margin: 1em 0px;
                 border-radius: 9px;
@@ -100,9 +100,9 @@
                 border-radius: 9px;
                 text-align: center;
                 margin: 0em;
-                background-color: #7a0202;
+                background-color: #040c5c;
                 padding: 1em;
-                color: #fff;
+                color: #000;
                 }
                 .content h2 {
                 background-color: transparent;
@@ -112,7 +112,7 @@
                 padding: 1em;
                 border-radius: 9px;
                 list-style: none;
-                background-color: #d80000;
+                background-color: #f7f9fc;
                 }
                 .content .receipt li {
                 text-align: left;

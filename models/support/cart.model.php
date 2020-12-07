@@ -89,7 +89,7 @@
             removeStock($prdCod,$stock["prdQuantity"]);
             $stock = getStock($prdCod);
             if($stock["prdStock"]<0){
-                echo "hola";
+                // echo "hola";
                 $valid = false;
                 addStock($prdCod,$stock["prdQuantity"]);
             }
@@ -190,7 +190,7 @@
             } 
         }
         
-        echo showErrors();
+        // echo showErrors();
     }
     function resetCart(){
         $products = getCartItems();

@@ -34,25 +34,25 @@
             
 
             if(removeAccess($varBody["typeCod"],$varBody["mdlCod"])){
-                echo "<script>alert('se Quito el Acceso al modulo de $module');</script>";
+                // echo "<script>alert('se Quito el Acceso al modulo de $module');</script>";
                 $viewData["hasAccess"] = hasAccess($viewData["typeCod"]);
                 $viewData["deniedAccess"] = deniedAccess($viewData["typeCod"]);
             }
             else{
-                echo "<script>alert('Ocurrio un error');</script>";
+                // echo "<script>alert('Ocurrio un error');</script>";
             }
         }
         if(isset($_POST["btnAcceder"])){
             $module = $varBody["mdlCod"];
             if(giveAccess($varBody["typeCod"],$varBody["mdlCod"])){
-                echo "<script>alert('se dio el Acceso al modulo de $module');</script>";
+                // echo "<script>alert('se dio el Acceso al modulo de $module');</script>";
                 $viewData["hasAccess"] = hasAccess($viewData["typeCod"]);
                 $viewData["deniedAccess"] = deniedAccess($viewData["typeCod"]);
             }
             else{
-                echo "<script>alert('Ocurrio un error');</script>";
+                // echo "<script>alert('Ocurrio un error');</script>";
             }
-            echo showErrors();
+            // echo showErrors();
         }
         if(isset($_POST["btnFiltrarA"])){
             if(!empty(filterHasAccess($varBody["typeCod"],$varBody["txtFiltrarA"]))){
